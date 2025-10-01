@@ -4,6 +4,8 @@ using UnityEngine;
 public class mm : MonoBehaviour
 {
     public GameObject clonePF;
+    int randNum;
+    public GameObject obj1, obj2, obj3, obj4, obj5;
     void Start()
     {
       randNum = Random.Range(0, 5);
@@ -43,7 +45,8 @@ public class mm : MonoBehaviour
         yield return new WaitForSecondsRealtime(2);
         Destroy(cloneGO);
     }
-        }
+        
 
-int randNum;
-public GameObject obj1, obj2, obj3, obj4, obj5;
+
+}
+
