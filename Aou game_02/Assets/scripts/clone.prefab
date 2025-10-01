@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3493901364067520464}
   - component: {fileID: 6543708775012856235}
   - component: {fileID: 3365130683977401166}
+  - component: {fileID: 7522285191827964100}
   m_Layer: 0
   m_Name: clone
   m_TagString: colne
@@ -165,3 +166,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec15b6721f19f2e4c9cd12adfbbc036a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clonePF: {fileID: 0}
+  obj1: {fileID: 0}
+  obj2: {fileID: 0}
+  obj3: {fileID: 0}
+  obj4: {fileID: 0}
+  obj5: {fileID: 0}
+--- !u!114 &7522285191827964100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830937740162502429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec15b6721f19f2e4c9cd12adfbbc036a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clonePF: {fileID: 0}
+  obj1: {fileID: 0}
+  obj2: {fileID: 0}
+  obj3: {fileID: 0}
+  obj4: {fileID: 0}
+  obj5: {fileID: 0}
