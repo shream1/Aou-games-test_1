@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 793433040}
   - component: {fileID: 793433039}
   - component: {fileID: 793433041}
+  - component: {fileID: 793433042}
   m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
@@ -474,6 +475,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &793433042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793433038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec15b6721f19f2e4c9cd12adfbbc036a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clonePF: {fileID: 1830937740162502429, guid: 1f276a55a7d9e634aac0c9e24d3634de, type: 3}
+  obj1: {fileID: 1830937740162502429, guid: 1f276a55a7d9e634aac0c9e24d3634de, type: 3}
+  obj2: {fileID: 1830937740162502429, guid: 1f276a55a7d9e634aac0c9e24d3634de, type: 3}
+  obj3: {fileID: 1830937740162502429, guid: 1f276a55a7d9e634aac0c9e24d3634de, type: 3}
+  obj4: {fileID: 1830937740162502429, guid: 1f276a55a7d9e634aac0c9e24d3634de, type: 3}
+  obj5: {fileID: 1830937740162502429, guid: 1f276a55a7d9e634aac0c9e24d3634de, type: 3}
 --- !u!1001 &9067046447049840241
 PrefabInstance:
   m_ObjectHideFlags: 0
