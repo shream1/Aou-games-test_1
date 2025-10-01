@@ -18,8 +18,8 @@ public class NewEmptyCSharpScript : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
        // playerCol = GameObject.FindGameObjectsWithTag("ground").GetComponent<Collider2D>();
        playerCol = GetComponent<Collider2D>();
-        Ground = GameObject.FindGameObjectWithTag("Grounded");
-        groundCol = Ground.GetComponent<BoxCollider2D>();
+       //    Ground = GameObject.FindGameObjectWithTag("Grounded");
+      //  groundCol = Ground.GetComponent<BoxCollider2D>();
         
     }
     private void Update()
