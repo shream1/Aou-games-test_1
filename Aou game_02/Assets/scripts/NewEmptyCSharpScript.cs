@@ -74,16 +74,18 @@ public class NewEmptyCSharpScript : MonoBehaviour
     void controlAni() 
     {
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) 
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) && !playerCol.IsTouching(groundCol))
         {
 
             ani.SetFloat("walking", 1);
-        
+
         }
         else if (playerCol.IsTouching(groundCol) && Input.GetKey(KeyCode.Space))
         {
-            ani.SetFloat("jumping", 1);   
-        
+            ani.SetFloat("jumping", 1);
+            Invoke(nameof(resetJumping), 1.2f);
+           
+
         }
         else if (moveHroizontal == 0)
         {
@@ -92,8 +94,24 @@ public class NewEmptyCSharpScript : MonoBehaviour
 
 
         }
+        else 
+        {
 
-       
+            ani.SetFloat("jumping", 0);
+            ani.SetFloat("walking", 0);
+
+
+
+        }
+
+
+    }
+
+    void resetJumping() 
+    {
+
+        ani.SetFloat("jumping", 0);
+
     }
 
     void MovePlayer() 
