@@ -1,35 +1,51 @@
 using System;
-using UnityEditor.ShaderGraph.Internal;
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewEmptyCSharpScript : MonoBehaviour
 {
+    //public static NewEmptyCSharpScript instance;
+     
     Rigidbody2D playerRB;
     float moveHroizontal;
     public float speed = 200 ;
     Collider2D playerCol;
     //Collider2D groundCol;
    public BoxCollider2D groundCol;
-    GameObject Ground;
+   public GameObject Ground;
 
     public Animator ani;
 
     public SpriteRenderer sr;
 
-    public float JumpForce; 
+    public float JumpForce;
 
+    public int couunter = 0;
+
+    private void Awake()
+    {
+         playerRB = GetComponent<Rigidbody2D>();
+       // playerCol = GameObject.FindGameObjectsWithTag("ground").GetComponent<Collider2D>();
+       playerCol = GetComponent<Collider2D>();
+          Ground = GameObject.FindGameObjectWithTag("Grounded");
+        groundCol = Ground.GetComponent<BoxCollider2D>();
+         ani = GetComponent<Animator>();
+
+        sr = GetComponent<SpriteRenderer>();
+    }
 
     void Start()
     {
-        playerRB = GetComponent<Rigidbody2D>();
-       // playerCol = GameObject.FindGameObjectsWithTag("ground").GetComponent<Collider2D>();
-       playerCol = GetComponent<Collider2D>();
-       //    Ground = GameObject.FindGameObjectWithTag("Grounded");
-      //  groundCol = Ground.GetComponent<BoxCollider2D>();]
-      ani = GetComponent<Animator>();
+        /*
+        Collider2D col = GetComponent<Collider2D>();
 
-        sr = GetComponent<SpriteRenderer>();
-        
+        if (GameManger.Instance != null)
+        {
+            GameManger.Instance.RegisterPlayer(col);
+        }
+        */
+
     }
     private void Update()
     {
@@ -54,6 +70,23 @@ public class NewEmptyCSharpScript : MonoBehaviour
         }
 
         controlAni();
+
+        if(counter == 5) 
+        {
+
+            Destroy(GameManger.Instance.gameObject);
+            SceneManager.LoadScene("SulgameScene");
+        
+        }
+
+        if (Input.GetKey(KeyCode.K)) 
+        {
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        }
+
+        
     }
     /// <summary>
     /// The void FixedUpdtade with  Capter (F) Not a small one (f)
@@ -132,4 +165,27 @@ public class NewEmptyCSharpScript : MonoBehaviour
 
 
     }
+    int counter;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+         if (collision.gameObject.tag == "Trap")
+        {
+            couunter++;
+            Destroy(collision.gameObject);
+        }
+
+         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       if(collision.gameObject.tag == "book") 
+        {
+            
+            counter++;
+            Destroy(collision.gameObject);
+        
+        }
+    }
+    
 }

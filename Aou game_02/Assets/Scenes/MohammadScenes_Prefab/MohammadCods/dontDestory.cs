@@ -1,17 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class TimeManger : MonoBehaviour
+public class dontDestory : MonoBehaviour
 {
-
-    public float time = 40;
-
-    public float timeModifier;
-    
-
+    public static dontDestory Instance;
     void Awake()
     {
-        /*
         // Make sure there is only one timer object
         if (Instance == null)
         {
@@ -22,9 +15,7 @@ public class TimeManger : MonoBehaviour
         {
             Destroy(gameObject); // destroy duplicates
         }
-        */
     }
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,28 +25,6 @@ public class TimeManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeIncrecse();
-
-        if(time <= 0) 
-        {
-
-            SceneManager.LoadScene("SulgameScene");
         
-        }
-      
     }
-
-
-    void timeIncrecse() 
-    {
-        
-        time -= Time.deltaTime;
-    
-    }
-
-
-
-
-
-
 }
