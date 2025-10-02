@@ -6,7 +6,7 @@ public class NewEmptyCSharpScript : MonoBehaviour
 {
     Rigidbody2D playerRB;
     float moveHroizontal;
-    private float speed = 200 ;
+    public float speed = 200 ;
     Collider2D playerCol;
     //Collider2D groundCol;
    public BoxCollider2D groundCol;
@@ -15,6 +15,8 @@ public class NewEmptyCSharpScript : MonoBehaviour
     public Animator ani;
 
     public SpriteRenderer sr;
+
+    public float JumpForce; 
 
 
     void Start()
@@ -74,7 +76,7 @@ public class NewEmptyCSharpScript : MonoBehaviour
     void controlAni() 
     {
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) && !playerCol.IsTouching(groundCol))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || !playerCol.IsTouching(groundCol))
         {
 
             ani.SetFloat("walking", 1);
@@ -126,7 +128,7 @@ public class NewEmptyCSharpScript : MonoBehaviour
     {
         //playerRB.AddForce(new Vector2(playerRB.velocity.x, 6 , ForceMode2D.Impules);
 
-        playerRB.AddForce(new Vector2(playerRB.linearVelocityX,6),ForceMode2D.Impulse);
+        playerRB.AddForce(new Vector2(playerRB.linearVelocityX,JumpForce),ForceMode2D.Impulse);
 
 
     }

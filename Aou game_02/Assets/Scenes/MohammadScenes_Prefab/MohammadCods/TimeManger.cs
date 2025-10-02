@@ -7,9 +7,7 @@ public class TimeManger : MonoBehaviour
 
     public float timeModifier;
 
-    public GradChanger changer;
-
-    int gradsGG;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,9 +19,7 @@ public class TimeManger : MonoBehaviour
     void Update()
     {
         timeIncrecse();
-        endGame();
-
-        gradsGG = changer.nextGrad;
+      
     }
 
 
@@ -35,24 +31,6 @@ public class TimeManger : MonoBehaviour
     }
 
 
-    void endGame() 
-    {
-
-        if (time <= 0)
-        {
-            Debug.Log("GameOver");
-
-        }
-
-        if(gradsGG == 3) 
-        {
-
-            Debug.Log("GameOver");
-
-
-        }
-
-    }
 
 
 
