@@ -22,13 +22,6 @@ public class GradChanger : MonoBehaviour
     {
         grad();
 
-        if (Input.GetKeyDown(KeyCode.X)) 
-        {
-            
-            nextGrad++; 
-        
-        }
-
     }
 
     void grad() 
