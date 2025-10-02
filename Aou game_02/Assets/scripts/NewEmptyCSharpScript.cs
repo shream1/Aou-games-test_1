@@ -93,6 +93,7 @@ public class NewEmptyCSharpScript : MonoBehaviour
 
         }
 
+       
     }
 
     void MovePlayer() 
