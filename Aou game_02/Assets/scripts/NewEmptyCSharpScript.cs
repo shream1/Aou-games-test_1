@@ -12,6 +12,10 @@ public class NewEmptyCSharpScript : MonoBehaviour
    public BoxCollider2D groundCol;
     GameObject Ground;
 
+    public Animator ani;
+
+    public SpriteRenderer sr;
+
 
     void Start()
     {
@@ -19,7 +23,10 @@ public class NewEmptyCSharpScript : MonoBehaviour
        // playerCol = GameObject.FindGameObjectsWithTag("ground").GetComponent<Collider2D>();
        playerCol = GetComponent<Collider2D>();
        //    Ground = GameObject.FindGameObjectWithTag("Grounded");
-      //  groundCol = Ground.GetComponent<BoxCollider2D>();
+      //  groundCol = Ground.GetComponent<BoxCollider2D>();]
+      ani = GetComponent<Animator>();
+
+        sr = GetComponent<SpriteRenderer>();
         
     }
     private void Update()
@@ -30,6 +37,21 @@ public class NewEmptyCSharpScript : MonoBehaviour
         {
             jump();
         }
+
+        if (Input.GetKeyDown(KeyCode.A)) 
+        {
+            
+            sr.flipX = true;
+            
+        }
+        else if (Input.GetKeyDown(KeyCode.D)) 
+        {
+            
+            sr.flipX = false;
+        
+        }
+
+        controlAni();
     }
     /// <summary>
     /// The void FixedUpdtade with  Capter (F) Not a small one (f)
@@ -47,6 +69,30 @@ public class NewEmptyCSharpScript : MonoBehaviour
 
         moveHroizontal = Input.GetAxisRaw("Horizontal");
     
+    }
+
+    void controlAni() 
+    {
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) 
+        {
+
+            ani.SetFloat("walking", 1);
+        
+        }
+        else if (playerCol.IsTouching(groundCol) && Input.GetKey(KeyCode.Space))
+        {
+            ani.SetFloat("jumping", 1);   
+        
+        }
+        else if (moveHroizontal == 0)
+        {
+
+            ani.SetFloat("walking", 0);
+
+
+        }
+
     }
 
     void MovePlayer() 
