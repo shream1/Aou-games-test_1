@@ -41,6 +41,11 @@ public class GradChanger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if(collision.transform.tag == "Trap") 
         {
             nextGrad++;
@@ -48,11 +53,6 @@ public class GradChanger : MonoBehaviour
             Debug.Log("He");
         
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
     }
 
 }
