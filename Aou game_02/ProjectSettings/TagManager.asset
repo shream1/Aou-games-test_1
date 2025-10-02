@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - colne
   layers:
   - Default
   - TransparentFX
@@ -17,11 +18,11 @@ TagManager:
   - Grounded
   - 
   - Trap
-  - 
-  - 
-  - 
-  - 
-  - 
+  - book
+  - book
+  - book
+  - book
+  - book
   - 
   - 
   - 
